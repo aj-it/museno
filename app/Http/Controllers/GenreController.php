@@ -16,7 +16,7 @@ class GenreController extends Controller
      */
     public function read()
     {
-        return Genre::paginate(50)->toJson();
+        return Genre::paginate(10)->toJson();
     }
 
     /**
@@ -30,10 +30,6 @@ class GenreController extends Controller
         $this->validate($request, [
             'name' => 'bail|required|unique:genres|max:255',
         ], $this->messages());
-
-        if ($request->id) {
-
-        }
 
         return Genre::create(['name' => $request->name]);
     }
@@ -74,6 +70,11 @@ class GenreController extends Controller
         $genre->delete();
     }
 
+    /**
+     * Retourne les messages d'erreurs personnalisés
+     *
+     * @return array
+     */
     private function messages()
     {
         return [

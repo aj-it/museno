@@ -5,11 +5,12 @@
         .module('app.genre')
         .controller('GenreModalController', GenreModalController);
 
-    GenreModalController.$inject = ['GenreService', '$uibModalInstance', 'genres', 'genre'];
+    GenreModalController.$inject = ['GenreService', '$uibModalInstance', 'genres', 'genre', 'title'];
 
-    function GenreModalController(GenreService, $uibModalInstance, genres, genre) {
+    function GenreModalController(GenreService, $uibModalInstance, genres, genre, title) {
         var vm = this;
 
+        vm.title = title;
         vm.genres = genres;
         vm.genre = genre;
         vm.errors = {};

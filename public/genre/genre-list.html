@@ -28,3 +28,12 @@
         </td>
     </tr>
 </table>
+<uib-pagination total-items="vm.totalItem"
+                ng-model="vm.currentPage"
+                max-size="vm.maxSize"
+                items-per-page="vm.itemPerPage"
+                class="pagination-sm"
+                boundary-link-numbers="true"
+                rotate="false"
+                ng-click="vm.paginate()"
+></uib-pagination>
