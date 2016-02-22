@@ -82,7 +82,6 @@
             Genre.$delete({id: data.id}).then(
                 // Success
                 function () {
-                    var i = 0;
                     vm.genres.map(function(genre, index) {
                         if (genre.id == data.id) {
                             vm.genres.splice(index, 1);

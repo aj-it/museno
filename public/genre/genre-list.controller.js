@@ -126,7 +126,10 @@
                     genres: function () {
                         return vm.genres;
                     },
-                    genre: genre
+                    genre: genre,
+                    title: function () {
+                        return 'Supprimer le genre ' + genre.name;
+                    }
                 }
             });
         }
