@@ -1,0 +1,38 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$close()"><span
+                aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Ajouter un genre</h4>
+    </div>
+    <form name="genreForm" novalidate>
+        <div class="modal-body">
+            <!-- Input ID -->
+            <input type="hidden" ng-model="vm.genre.id" />
+
+            <!-- Input libellé -->
+            <div class="form-group"
+                 ng-class="{ 'has-error': genreForm.genreName.$touched && genreForm.genreName.$invalid || vm.errors.name.length > 0 }">
+                <label for="genreName">Libellé : </label>
+                <input type="text"
+                       class="form-control"
+                       id="genreName"
+                       ng-model="vm.genre.name"
+                       name="genreName"
+                       maxlength="255"
+                       required>
+                <!-- Client validation -->
+                <div class="help-block" ng-messages="genreForm.genreName.$error" ng-if="genreForm.genreName.$touched">
+                    <p ng-message="required">Le libellé est obligatoire.</p>
+                </div>
+                <!-- Server validation -->
+                <div class="help-block" ng-repeat="errorName in vm.errors.name" ng-if="vm.genre.name">
+                    <p class="text-danger">{{ errorName }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="$close()">Annuler</button>
+            <button type="submit" class="btn btn-primary" ng-click="vm.saveGenre(vm.genre)">Enregistrer</button>
+        </div>
+    </form>
+</div>

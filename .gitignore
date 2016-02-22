@@ -1,0 +1,11 @@
+/vendor
+Homestead.yaml
+Homestead.json
+.env
+logs/*
+!.gitkeep
+node_modules/
+public/bower_components/
+tmp
+.DS_Store
+.idea

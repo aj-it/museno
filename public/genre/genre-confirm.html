@@ -1,0 +1,18 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$close()"><span
+                aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Supprimer le genre {{ vm.genre.name }}</h4>
+    </div>
+    <div class="modal-body">
+        <p>Voulez-vous supprimer le genre {{ vm.genre.name }} ?</p>
+        <!-- Server validation -->
+        <div class="help-block" ng-repeat="errorId in vm.errors.id">
+            <p class="text-danger">{{ errorId }}</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="$close()">Annuler</button>
+        <button type="submit" class="btn btn-default" ng-click="vm.deleteGenre(vm.genre)">Supprimer</button>
+    </div>
+</div>
