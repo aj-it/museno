@@ -31,7 +31,7 @@
         }
 
         /**
-         * Ouvre le fenêtre d'ajout d'un genre.
+         * Ouvre la fenêtre d'ajout d'un genre.
          *
          *@return void
          */
@@ -72,7 +72,7 @@
         }
 
         /**
-         * Ouvre de la fenêtre de confirmation de suppression d'un genre.
+         * Ouvre la fenêtre de confirmation de suppression d'un genre.
          *
          * @param genre
          * @return void
